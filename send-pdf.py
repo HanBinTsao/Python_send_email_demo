@@ -6,12 +6,13 @@ from email.message import EmailMessage
 # Use Linux shell command: export EMAIL_USER=xxxxxx@gmail.com
 EMAIL_ADDRESS = os.environ.get('EMAIL_USER')
 EMAIL_PASSWORD = os.environ.get('EMAIL_PASS')
-EMAIL_RECEIVE_ADDRESS = os.environ.get('EMAIL_REC_ADD')
+
+contacts = ['example1@gmail.com', 'example2@example.com']
 
 msg = EmailMessage()
 msg['Subject'] = 'Hello, just a demo.'
 msg['From'] = EMAIL_ADDRESS
-msg['To'] = EMAIL_RECEIVE_ADDRESS
+msg['To'] = contacts
 msg.set_content('Hows going')
 
 files = ['test.pdf']
